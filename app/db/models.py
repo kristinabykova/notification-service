@@ -3,8 +3,7 @@ import enum
 from sqlalchemy import String, Text
 from sqlalchemy.orm import Mapped, mapped_column
 
-from .base import pk_uuid, created_time, updated_time
-from .database import db
+from .base import pk_uuid, created_time, updated_time, db
 
 
 class NotificationType(str, enum.Enum):

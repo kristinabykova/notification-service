@@ -2,6 +2,9 @@ from datetime import datetime
 from typing import Annotated
 import uuid
 
+from flask_sqlalchemy import SQLAlchemy
+from base import Base
+
 from sqlalchemy import func, text
 from sqlalchemy.orm import DeclarativeBase, mapped_column
 
@@ -16,4 +19,13 @@ updated_time = Annotated[
 ]
 
 
-class Base(DeclarativeBase): ...
+class Base(DeclarativeBase):
+    pass
+
+
+db = SQLAlchemy(
+    model_class=Base,
+    engine_options={
+        "pool_pre_ping": True,
+    },
+)
