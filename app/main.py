@@ -1,7 +1,9 @@
 from flask import Flask
-import uvicorn
+from api.v1.notifications import router
 
 app = Flask(__name__)
+
+app.register_blueprint(router, url_prefix="/api/v1")
 
 
 @app.route("/", methods=["GET"])
