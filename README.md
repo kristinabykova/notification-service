@@ -291,13 +291,13 @@ curl -X POST http://127.0.0.1:5000/api/v1/notifications \
 }
 ```
 
-После обработки запрос по id вернёт:
+После обработки запрос по id:
 
 ```bash
 curl http://127.0.0.1:5000/api/v1/notifications/9a87d79e-0dd1-4d48-9f95-186ed6b78f7b
 ```
 
-Ожидаемый ответ:
+Вернёт:
 
 ```json
 {
