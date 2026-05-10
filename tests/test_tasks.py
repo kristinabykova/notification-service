@@ -108,11 +108,18 @@ def test_process_notification_failed(
 
     process_notification.run(str(notification_id))
 
-    mock_update_status.assert_called_once_with(
+    mock_update_status.assert_any_call(
+        notification_id,
+        NotificationStatus.PENDING,
+    )
+
+    mock_update_status.assert_any_call(
         notification_id,
         NotificationStatus.FAILED,
         error="Mock notification sending error",
     )
+
+    assert mock_update_status.call_count == 2
 
     mock_log_event.assert_any_call(
         "notification_failed",
