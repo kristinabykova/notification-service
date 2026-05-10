@@ -63,7 +63,12 @@ def test_process_notification_success(
     mock_get_by_id.assert_called_once_with(notification_id)
     mock_imitate_send.assert_called_once_with(notification)
 
-    mock_update_status.assert_called_once_with(
+    mock_update_status.assert_any_call(
+        notification_id,
+        NotificationStatus.PENDING,
+    )
+
+    mock_update_status.assert_any_call(
         notification_id,
         NotificationStatus.SENT,
     )
