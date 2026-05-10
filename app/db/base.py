@@ -3,7 +3,6 @@ from typing import Annotated
 import uuid
 
 from flask_sqlalchemy import SQLAlchemy
-from base import Base
 
 from sqlalchemy import func, text
 from sqlalchemy.orm import DeclarativeBase, mapped_column
