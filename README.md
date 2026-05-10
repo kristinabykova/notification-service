@@ -70,6 +70,8 @@ docker compose up --build
 
 ## Примеры запросов
 
+Все запросы прописаны для Linux/macOS
+
 ### Создать email-уведомление
 
 ```bash
