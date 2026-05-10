@@ -6,8 +6,8 @@ from app.crud.notifications import (
     get_notification_by_id,
     get_notifications,
 )
-from app.logger import log_event
-from app.schemas import (
+from app.utils.logger import log_event
+from app.schemas.notifications import (
     CreateNotification,
     CreateNotificationResponse,
     NotificationFilter,

@@ -4,7 +4,7 @@ from uuid import UUID
 from sqlalchemy import select
 
 from app.db.models import Notification, NotificationStatus
-from app.schemas import CreateNotification, NotificationFilter
+from app.schemas.notifications import CreateNotification, NotificationFilter
 from app.db.base import db
 
 

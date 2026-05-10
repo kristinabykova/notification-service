@@ -7,7 +7,7 @@ from app.config import settings
 from app.crud.notifications import get_notification_by_id, update_notification_status
 from app.db.models import Notification, NotificationStatus
 from app.factory import create_app
-from app.logger import log_event
+from app.utils.logger import log_event
 
 celery_app = Celery(
     "notification_service",
