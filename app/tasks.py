@@ -46,6 +46,11 @@ def process_notification(notification_id: str) -> None:
                 "notification_processing_started", notification_id=notification_id
             )
 
+            update_notification_status(
+                UUID(notification_id),
+                NotificationStatus.PENDING,
+            )
+
             imitate_send(notification)
 
             update_notification_status(
