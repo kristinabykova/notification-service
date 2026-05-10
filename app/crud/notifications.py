@@ -8,7 +8,7 @@ from app.schemas import CreateNotification, NotificationFilter
 from app.db.base import db
 
 
-def createNotification(data: CreateNotification) -> Notification:
+def create_notif(data: CreateNotification) -> Notification:
     notification = Notification(
         type=data.type.value,
         recipient=data.recipient,

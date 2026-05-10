@@ -10,7 +10,7 @@ from pydantic import (
     model_validator,
     EmailStr,
 )
-from db.models import NotificationStatus, NotificationType
+from app.db.models import NotificationStatus, NotificationType
 
 PHONE_RE = re.compile(r"^\+?[1-9]\d{7,14}$")
 TELEGRAM_RE = re.compile(r"^(@?[A-Za-z0-9_]{5,32}|\d{5,20})$")
@@ -21,7 +21,7 @@ class CreateNotification(BaseModel):
     recipient: str = Field(min_length=1, max_length=255)
     subject: Optional[str] = Field(default=None, max_length=255)
     message: str = Field(min_length=1)
-    channel_data: Optional[dict[str, Any]]
+    channel_data: Optional[dict[str, Any]] = None
 
     @model_validator(mode="after")
     def validate(self):
