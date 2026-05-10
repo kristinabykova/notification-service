@@ -1,5 +1,5 @@
 import re
-from typing import Any, Literal, Optional
+from typing import Any, Optional
 from uuid import UUID
 
 from pydantic import (
